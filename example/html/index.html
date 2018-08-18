@@ -9,7 +9,7 @@
     <br/>
     <p id='frame_buffer'></p>
     <br/>
-    <canvas id='cam' style="width:100%; height:75vw;">
+    <canvas id='cam' style="width:300px; height:200px;">
     
 
   <!-- provide WSAvcPlayer -->
@@ -25,11 +25,11 @@
       
       //maybe get rid of the ws inside the player?
       //var uri = "ws://meganeko:3000/videoStream"// + document.location.host;
-      var uri = "ws://" + document.location.host;
-      //var uri = "ws://localhost:3333/"
-      wsavc.connect(uri);
+      
+      var uri = "ws://wmws.nicejj.cn:17958/";
+      console.log('uri', uri);
 
-      //wsavc.on('message', m=>console.log(m))
+      var result = wsavc.connect(uri);
       
       wsavc.on('disconnected',()=>console.log('WS Disconnected'))
       wsavc.on('connected',()=>console.log('WS connected'))
@@ -39,11 +39,9 @@
 
       wsavc.on('initalized',(payload)=>{
         console.log('Initialized', payload)
-        
       })
 
       wsavc.on('stream_active',active=>console.log('Stream is ',active?'active':'offline'))
-
 
       wsavc.on('custom_event_from_server',event=>console.log('got event from server', event))
 
