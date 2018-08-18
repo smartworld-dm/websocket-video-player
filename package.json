@@ -9,7 +9,7 @@
     "README.md"
   ],
   "scripts": {
-    "example": "node example/index.js",
+    "dev": "webpack && node example/index.js",
     "build": "cross-env NODE_ENV=production webpack",
     "build:dev": "webpack",
     "lint": "eslint .",
