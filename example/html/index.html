@@ -3,10 +3,6 @@
     <title>h264-live-player web client demo</title>
   </head>
   <body>
-
-    <button type="button" onclick="wsavc.send('custom_event_from_client',{ hello:'world' })">Send event to server</button>
-    
-    <br/>
     <p id='frame_buffer'></p>
     <br/>
     <canvas id='cam' style="width:300px; height:200px;">
@@ -19,12 +15,9 @@
       var fb = document.getElementById('frame_buffer')
 
       // Create h264 player
-      var wsavc = new WSAvcPlayer(canvas, "webgl", 1, 35);
+      var wsavc = new WSAvcPlayer(canvas, "webgl", 1, 15);
       //expose instance for button callbacks
       window.wsavc = wsavc;
-      
-      //maybe get rid of the ws inside the player?
-      //var uri = "ws://meganeko:3000/videoStream"// + document.location.host;
       
       var uri = "ws://wmws.nicejj.cn:17958/";
       console.log('uri', uri);

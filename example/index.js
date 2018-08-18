@@ -1,5 +1,4 @@
 /* eslint-disable no-console */
-const AvcServer = require('../lib/server')
 const path = require('path')
 const http = require('http')
 
